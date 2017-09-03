@@ -1,4 +1,8 @@
-
+/**
+ * Teste de Resolucao de todos exercicios da ficha 4
+ * 
+ * @author root --- Dercio Geraldo Comiche Guirruta
+ */
 package ficha4;
 
 import java.util.Scanner;
@@ -16,7 +20,10 @@ public class Run {
         run_all();
     }
 
-    
+    /**
+     * Interface com o usuario 
+     * 
+     */
    public static void run_all() {
         int opt = -1;
         do {            
@@ -29,16 +36,20 @@ public class Run {
                     teste_estatistica();
                     break;
                 case 2:
-                    teste_jogoGato();
+                    teste_jogoGalo();
                     break;
                 case 3:
-                    teste_turma();
+                    teste_realJogoGalo();
                     break;
                 case 4:
-                    testeCompararBool();
+                    teste_turma();
+                    break;
                 case 5:
+                    testeCompararBool();
+                case 6:
                     teste_ordenar();
                     break;                    
+
                 default:
                     opt = -1;
             }
@@ -48,11 +59,12 @@ public class Run {
     {
         System.out.println("\t\t*** Testes de Exercicos Ficha 4 ***\n\n");
         System.out.println("1 - Estatistica --- Moda - Mediana - Media");
-        System.out.println("2 - Jogo do Galo ---");
-        System.out.println("3 - Media e Numero estudante");
-        System.out.println("4 - Comparar dois vetores");
-        System.out.println("5 - Ordenar vetor");
-        System.out.println("6 - Sair\n\n");
+        System.out.println("2 - Jogo do Galo --- Advinhar um numero sorteado");
+        System.out.println("3 - Jogo do Galo  --- Jogo da Velha");
+        System.out.println("4 - Media e Numero estudante --- Exibir estudantes e as respectivas medias e o(s) melhor(es) aluno(s)");
+        System.out.println("5 - Comparar dois vetores --- Se possuem mesmo tamanho e mesmos elementos");
+        System.out.println("6 - Ordenar vetor --- Loop  Removendo o maior valor de uma lista e colocar em uma nova lista");
+        System.out.println("7 - Sair\n\n");
 
     }
     
@@ -77,10 +89,17 @@ public class Run {
      * Teste para exercicio 2
      * Jogo do Galo
      */
-    public static void teste_jogoGato()
+    public static void teste_jogoGalo()
     {
         JogoGalo jogo = new JogoGalo();
         jogo.exec();
+        
+    }
+    
+    public static void teste_realJogoGalo()
+    {
+        realJogoGalo galo = new realJogoGalo();
+        galo.play();
         
     }
     
@@ -104,10 +123,11 @@ public class Run {
 //        }
         
         CompararVetores compVetor = new CompararVetores();
-            System.out.print("Lista 1: ");
-            printLista(lista1);
-            System.out.print("Lista 2: ");
-            printLista(lista2);
+        System.out.print("Lista 1: ");
+        printLista(lista1);
+        System.out.print("Lista 2: ");
+        printLista(lista2);
+
         int rv= compVetor.compare(lista1, lista2);
         if (rv == 0) 
             System.out.println("\nIguais");
