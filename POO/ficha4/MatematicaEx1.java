@@ -53,13 +53,17 @@ public class MatematicaEx1 {
             int moda = 0;
             int count = 0;
             
-            for(int i = 0; i < tamanho-2; i++) {                
+            if (tamanho < 0 )
+                return -1;
+            for(int i = 0; i < tamanho-1; i++) {                
                 if (count < pesquisa.encontrarMaiorOcorrencia(vetor[i])) {
                     count =  pesquisa.encontrarMaiorOcorrencia(vetor[i]);
                     // System.out.printf("[DBG] Pos: %d -- cout: %d \n", i, count);
                     moda = vetor[i]; // valor de maior ocorrencia na lista
                 }
             }
+            if (count <= 1 )
+                return -2; // Nao houve repeticoes de elementos no vetor
             return moda;
         }
         
@@ -85,15 +89,15 @@ public class MatematicaEx1 {
             return lista;
         }
         
-        public static int mediana(int[] vetor) {
-            int mediana = 0;
+        public static double mediana(int[] vetor) {
+            double mediana = 0.0;
             int pos = -1;
             int size = vetor.length;
             if (size % 2 == 0) {
 //                 pos = ((size/2) + (size/2 - 1))/ 2;
-                mediana = vetor[size/2] + vetor[size/2 - 1] / 2;
+                mediana = (vetor[size/2] + vetor[size/2 - 1]) / 2.0;
             } else {
-                mediana = vetor[mediana];
+                mediana = vetor[size/2];
 //                System.out.println("ImPar");
             }
             return mediana;

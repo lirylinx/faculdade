@@ -74,13 +74,14 @@ public class Run {
     public static void teste_estatistica()
     {    
 
-        int[] lista = new int[]{1,  1, 5, 6, 10, 5, 3, 9, 5, 6, 4, 51,1, 14, 3, 1, 23, 6, 7, 6, 21, 6, 4, 4};
-//        int[] lista = new int[] {20, 20, 20};
+        int[] lista = new int[]{-1, 1, 1 ,1, 5, 6, 10, 5, 3, 9, 5, 6, 4, 51,1, 14, 3, 1, 23, 6, 7, 6, 21, 6, 4, 4};
+//        int[] lista = new int[] { 1, 2, 3};
         int moda = MatematicaEx1.Estatistica.moda(lista);
         
         int media = MatematicaEx1.Estatistica.media(lista);
-        int mediana = MatematicaEx1.Estatistica.mediana(lista);
-        System.out.println("Moda: " + moda);
+        double mediana = MatematicaEx1.Estatistica.mediana(lista);
+        if (moda >= 0)
+            System.out.println("Moda: " + moda);
         System.out.println("Media: " + media);
         System.out.println("Mediana: " + mediana);
     }
